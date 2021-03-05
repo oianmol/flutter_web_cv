@@ -12,26 +12,15 @@ class UserTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     int axisCount = getAxisCount(constraints);
     return SliverGrid(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: axisCount,  crossAxisSpacing: 15,
-        mainAxisSpacing: 15,
-        childAspectRatio: 2),
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: axisCount,
+          crossAxisSpacing: 15,
+          mainAxisSpacing: 15,
+          childAspectRatio: 2),
       delegate: SliverChildListDelegate(
-        [
-          website(), linkedIn(), email(), phone()
-        ],
+        [website(), linkedIn(), email(), phone()],
       ),
     );
-    return LayoutBuilder(builder: (context, constraints) {
-
-      return GridView.count(
-        crossAxisCount: axisCount,
-        padding: EdgeInsets.symmetric(vertical: 20),
-        crossAxisSpacing: 15,
-        mainAxisSpacing: 15,
-        childAspectRatio: 2,
-        children: [website(), linkedIn(), email(), phone()],
-      );
-    });
   }
 
   int getAxisCount(BoxConstraints constraints) {

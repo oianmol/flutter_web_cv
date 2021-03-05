@@ -17,6 +17,8 @@ class TabButton extends StatelessWidget {
         style: GoogleFonts.lato(
             color: Colors.white,
             letterSpacing: 1),
+        maxLines: 1,
+        overflow: TextOverflow.ellipsis,
       ),
     );
   }

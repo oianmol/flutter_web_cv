@@ -1,5 +1,5 @@
-import 'package:anmolverma_in/resume/resume_experience.dart';
-import 'package:anmolverma_in/resume/resume_extras.dart';
+import 'package:anmolverma_in/resume/experience/resume_experience.dart';
+import 'package:anmolverma_in/resume/extras/resume_extras.dart';
 import 'package:flutter/material.dart';
 
 class ResumeExtendedContent extends StatelessWidget {
@@ -33,6 +33,7 @@ class ResumeExtendedContent extends StatelessWidget {
           child: ResumeExperience(),
           flex: 2,
         ),
+        SizedBox(width: 20,),
         Expanded(
           child: ResumeExtras(),
           flex: 1,
