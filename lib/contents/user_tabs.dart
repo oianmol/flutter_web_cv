@@ -7,33 +7,19 @@ class UserTabs extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
-      debugPrint("Max width is ${constraints.maxWidth}");
       int axisCount = getAxisCount(constraints);
-      double childAR = getChildAspectRatio(constraints);
+      debugPrint("Max width is ${constraints.maxWidth}");
 
       return GridView.count(
         crossAxisCount: axisCount,
         primary: false,
         padding: EdgeInsets.symmetric(vertical: 20),
-        crossAxisSpacing: 10,
+        crossAxisSpacing: 15,
         mainAxisSpacing: 15,
-        childAspectRatio: childAR,
+        childAspectRatio: 2,
         children: [website(), linkedIn(), email(), phone()],
       );
     });
-  }
-
-  double getChildAspectRatio(BoxConstraints constraints) {
-    double axisCount = 4;
-
-    if (constraints.maxWidth < 250) {
-      axisCount = 1;
-    } else if (constraints.maxWidth < 335) {
-      axisCount = 2;
-    } else if (constraints.maxWidth < 400) {
-      axisCount = 3;
-    }
-    return axisCount;
   }
 
   int getAxisCount(BoxConstraints constraints) {

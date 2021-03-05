@@ -15,7 +15,8 @@ class TabButton extends StatelessWidget {
       child: Text(
         titleText,
         style: GoogleFonts.lato(
-            color: Colors.white, letterSpacing: 1),
+            color: Colors.white,
+            letterSpacing: 1),
       ),
     );
   }
@@ -25,7 +26,7 @@ class TabButton extends StatelessWidget {
       onPrimary: Colors.white,
       primary: Colors.green,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(28.0),
+        borderRadius: BorderRadius.circular(36.0),
       ),
     );
   }
