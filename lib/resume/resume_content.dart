@@ -12,7 +12,7 @@ class _ResumeContentState extends State<ResumeContent> {
   Widget build(BuildContext context) {
     return Container(
       child: resumeContent(),
-      margin: EdgeInsets.symmetric(vertical: 24, horizontal: 36),
+      margin: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
     );
   }
 

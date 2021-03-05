@@ -8,25 +8,40 @@ class UserTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       debugPrint("Max width is ${constraints.maxWidth}");
-      var axisCount = 4;
+      int axisCount = getAxisCount(constraints);
+      double childAR = getChildAspectRatio(constraints);
 
-      if (constraints.maxWidth < 250) {
-        axisCount = 1;
-      } else if (constraints.maxWidth < 335) {
-        axisCount = 2;
-      } else if (constraints.maxWidth < 400) {
-        axisCount = 3;
-      }
       return GridView.count(
         crossAxisCount: axisCount,
         primary: false,
         padding: EdgeInsets.symmetric(vertical: 20),
         crossAxisSpacing: 10,
         mainAxisSpacing: 15,
-        childAspectRatio: 3,
+        childAspectRatio: childAR,
         children: [website(), linkedIn(), email(), phone()],
       );
     });
+  }
+
+  double getChildAspectRatio(BoxConstraints constraints) {
+    double axisCount = 4;
+
+    if (constraints.maxWidth < 250) {
+      axisCount = 1;
+    } else if (constraints.maxWidth < 335) {
+      axisCount = 2;
+    } else if (constraints.maxWidth < 400) {
+      axisCount = 3;
+    }
+    return axisCount;
+  }
+
+  int getAxisCount(BoxConstraints constraints) {
+    var axisCount = constraints.maxWidth ~/ 100;
+    if (axisCount == 0) {
+      axisCount = 1;
+    }
+    return axisCount;
   }
 
   TabButton phone() {
