@@ -21,7 +21,7 @@ class _ResumeContentState extends State<ResumeContent> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         NameView("Anmol Verma"),
-        Expanded(child: UserTabs())
+        UserTabs()
       ],
     );
   }
