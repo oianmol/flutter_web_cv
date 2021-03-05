@@ -4,15 +4,27 @@ import 'package:mailto/mailto.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class UserTabs extends StatelessWidget {
+  final BoxConstraints constraints;
+
+  UserTabs(this.constraints);
+
   @override
   Widget build(BuildContext context) {
+    int axisCount = getAxisCount(constraints);
+    return SliverGrid(
+      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: axisCount,  crossAxisSpacing: 15,
+        mainAxisSpacing: 15,
+        childAspectRatio: 2),
+      delegate: SliverChildListDelegate(
+        [
+          website(), linkedIn(), email(), phone()
+        ],
+      ),
+    );
     return LayoutBuilder(builder: (context, constraints) {
-      int axisCount = getAxisCount(constraints);
-      debugPrint("Max width is ${constraints.maxWidth}");
 
       return GridView.count(
         crossAxisCount: axisCount,
-        primary: false,
         padding: EdgeInsets.symmetric(vertical: 20),
         crossAxisSpacing: 15,
         mainAxisSpacing: 15,

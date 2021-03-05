@@ -9,9 +9,11 @@ class ResumeHome extends StatefulWidget {
 class _ResumeHomeState extends State<ResumeHome> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: Container(
-      color: Colors.green.shade900,
-      child: ResumeContainer(),
-    ),);
+    return Scaffold(
+      body: Container(
+        color: Colors.green.shade900,
+        child: ResumeContainer(),
+      ),
+    );
   }
 }
