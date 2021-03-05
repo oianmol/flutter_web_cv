@@ -9,17 +9,14 @@ class TabButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: ElevatedButton(
-        onPressed: onPressed,
-        style: buttonStyle(),
-        child: Text(
-          titleText,
-          style: GoogleFonts.lato(
-              color: Colors.white, letterSpacing: 1, fontSize: 16),
-        ),
+    return ElevatedButton(
+      onPressed: onPressed,
+      style: buttonStyle(),
+      child: Text(
+        titleText,
+        style: GoogleFonts.lato(
+            color: Colors.white, letterSpacing: 1),
       ),
-      margin: EdgeInsets.only(right: 10),
     );
   }
 

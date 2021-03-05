@@ -8,35 +8,24 @@ class UserTabs extends StatelessWidget {
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       debugPrint("Max width is ${constraints.maxWidth}");
-      if (constraints.maxWidth > 400) {
-        return Container(
-          margin: EdgeInsets.symmetric(vertical: 20),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [website(), linkedIn(), email(), phone(), Spacer()],
-          ),
-          width: MediaQuery.of(context).size.width,
-        );
-      } else {
-        return Container(
-          margin: EdgeInsets.symmetric(vertical: 20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  website(),
-                  linkedIn(),
-                  email(),
-                ],
-              ),
-              phone(),
-            ],
-          ),
-          width: MediaQuery.of(context).size.width,
-        );
+      var axisCount = 4;
+
+      if (constraints.maxWidth < 250) {
+        axisCount = 1;
+      } else if (constraints.maxWidth < 335) {
+        axisCount = 2;
+      } else if (constraints.maxWidth < 400) {
+        axisCount = 3;
       }
+      return GridView.count(
+        crossAxisCount: axisCount,
+        primary: false,
+        padding: EdgeInsets.symmetric(vertical: 20),
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 15,
+        childAspectRatio: 3,
+        children: [website(), linkedIn(), email(), phone()],
+      );
     });
   }
 
