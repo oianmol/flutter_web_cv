@@ -9,7 +9,7 @@ class ResumeExtendedContent extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (constraints.maxWidth > 800) {
+    if (constraints.maxWidth > 600) {
       return landscape();
     } else {
       return portrait();
@@ -20,25 +20,32 @@ class ResumeExtendedContent extends StatelessWidget {
     return Column(
       children: [
         ResumeExperience(),
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         ResumeExtras()
       ],
     );
   }
 
-  Row landscape() {
-    return Row(
-      children: [
-        Expanded(
-          child: ResumeExperience(),
-          flex: 2,
-        ),
-        SizedBox(width: 20,),
-        Expanded(
-          child: ResumeExtras(),
-          flex: 1,
-        )
-      ],
+  Widget landscape() {
+    return IntrinsicHeight(
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          Expanded(
+            child: ResumeExperience(),
+            flex: 2,
+          ),
+          SizedBox(
+            width: 28,
+          ),
+          Expanded(
+            child: ResumeExtras(),
+            flex: 1,
+          )
+        ],
+      ),
     );
   }
 }

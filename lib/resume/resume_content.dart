@@ -14,7 +14,7 @@ class _ResumeContentState extends State<ResumeContent> {
   Widget build(BuildContext context) {
     return Container(
       child: resumeContent(),
-      margin: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
+      padding: EdgeInsets.symmetric(vertical: 24, horizontal: 16),
     );
   }
 
