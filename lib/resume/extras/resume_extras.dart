@@ -68,9 +68,9 @@ class ResumeExtras extends StatelessWidget {
           separator: false,
         ),
         SubSection(
-            text1: "* SOLID Principles\n"
-                "* Design Patterns\n"
-                "* Clean Code",
+            text1: "♥ SOLID Principles\n"
+                "♥ Design Patterns\n"
+                "♥ Clean Code",
             text2: "",
             text3: "",
             text4: "",
