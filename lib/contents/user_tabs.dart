@@ -24,7 +24,7 @@ class UserTabs extends StatelessWidget {
   }
 
   int getAxisCount(BoxConstraints constraints) {
-    var axisCount = constraints.maxWidth ~/ 100;
+    var axisCount = constraints.maxWidth ~/ 120;
     if (axisCount == 0) {
       axisCount = 1;
     }

@@ -1,6 +1,8 @@
+import 'package:anmolverma_in/contents/linkpreview/link_preview.dart';
+import 'package:anmolverma_in/contents/linkpreview/url_preview_fetcher.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_link_preview/flutter_link_preview.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:metadata_fetch/metadata_fetch.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SubSection extends StatelessWidget {
@@ -72,21 +74,53 @@ class SubSection extends StatelessWidget {
 
   Widget linkPreviewWidget() {
     return linkPreview != null && linkPreview.isNotEmpty
-        ? GestureDetector(
-            child: FlutterLinkPreview(
-              url: linkPreview,
-              bodyStyle: TextStyle(
-                color: Colors.white70,
-              ),
-              titleStyle: TextStyle(
-                color: Colors.white70,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-            onTap: () {
-              launch(linkPreview);
-            },
-          )
+        ? linkTouchableWidget()
         : Container();
+  }
+
+  GestureDetector linkTouchableWidget() {
+    return GestureDetector(
+      child: linkFutureBuilder(),
+      onTap: () {
+        launch(linkPreview);
+      },
+    );
+  }
+
+  FutureBuilder<Metadata> linkFutureBuilder() {
+    return FutureBuilder(
+        future: UrlPreviewFetcher.fetch(linkPreview),
+        builder: (context, snapshot) {
+          print(snapshot.error);
+          if (snapshot.hasData) {
+            return linkPreviewWidgetBuilder(snapshot);
+          } else {
+            return linkClickableWidget();
+          }
+        });
+  }
+
+  GestureDetector linkClickableWidget() {
+    return GestureDetector(
+        child: Text("Link To Cert...",
+            style: TextStyle(
+                decoration: TextDecoration.underline, color: Colors.blue)),
+        onTap: () {
+          // do what you need to do when "Click here" gets clicked
+          launch(linkPreview);
+        });
+  }
+
+  LinkPreview linkPreviewWidgetBuilder(AsyncSnapshot snapshot) {
+    return LinkPreview(
+        linkPreview: linkPreview,
+        metadata: snapshot.data,
+        bodyStyle: TextStyle(
+          color: Colors.white70,
+        ),
+        titleStyle: TextStyle(
+          color: Colors.white70,
+          fontWeight: FontWeight.bold,
+        ));
   }
 }

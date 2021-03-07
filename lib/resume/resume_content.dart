@@ -22,6 +22,7 @@ class _ResumeContentState extends State<ResumeContent> {
     return LayoutBuilder(
       builder: (context, constraints) {
         return CustomScrollView(
+
           slivers: <Widget>[
             SliverToBoxAdapter(
               child: NameView("Anmol Verma"),
