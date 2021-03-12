@@ -21,27 +21,21 @@ class _ResumeContentState extends State<ResumeContent> {
   Widget resumeContent() {
     return LayoutBuilder(
       builder: (context, constraints) {
-        return CustomScrollView(
-
-          slivers: <Widget>[
-            SliverToBoxAdapter(
-              child: NameView("Anmol Verma"),
-            ),
-            SliverToBoxAdapter(
-              child: SizedBox(
+        return SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              NameView("Anmol Verma"),
+              SizedBox(
                 height: 20,
               ),
-            ),
-            UserTabs(constraints),
-            SliverToBoxAdapter(
-              child: SizedBox(
+              UserTabs(constraints),
+              SizedBox(
                 height: 20,
               ),
-            ),
-            SliverToBoxAdapter(
-              child: ResumeExtendedContent(constraints),
-            )
-          ],
+              ResumeExtendedContent(constraints)
+            ],
+          ),
         );
       },
     );

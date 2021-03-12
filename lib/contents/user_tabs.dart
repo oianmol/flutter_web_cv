@@ -10,25 +10,10 @@ class UserTabs extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int axisCount = getAxisCount(constraints);
-    return SliverGrid(
-      gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: axisCount,
-          crossAxisSpacing: 15,
-          mainAxisSpacing: 15,
-          childAspectRatio: 2),
-      delegate: SliverChildListDelegate(
-        [website(), linkedIn(), email(), phone()],
-      ),
-    );
-  }
-
-  int getAxisCount(BoxConstraints constraints) {
-    var axisCount = constraints.maxWidth ~/ 105;
-    if (axisCount == 0) {
-      axisCount = 1;
-    }
-    return axisCount;
+    return Wrap(
+      spacing: 4.0,
+      runSpacing: 4.0,
+      children: [website(), linkedIn(), email(), phone()]);
   }
 
   TabButton phone() {

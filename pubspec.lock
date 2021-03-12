@@ -159,9 +159,11 @@ packages:
   metadata_fetch:
     dependency: "direct main"
     description:
-      path: "/Users/anmolverma/projects/metadata_fetch"
-      relative: false
-    source: path
+      path: "."
+      ref: HEAD
+      resolved-ref: "2fafa5393ee4ca40ff9b8c91c36b91d01b15179c"
+      url: "https://github.com/Anmol92verma/metadata_fetch"
+    source: git
     version: "0.3.4"
   path:
     dependency: transitive
