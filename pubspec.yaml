@@ -33,8 +33,7 @@ dependencies:
   mailto: ^1.1.0
   http: ^0.13.0
   metadata_fetch:
-    path: /Users/anmolverma/projects/metadata_fetch
-    #git: https://github.com/Anmol92verma/metadata_fetch
+    git: https://github.com/Anmol92verma/metadata_fetch
 
 
 dev_dependencies:
