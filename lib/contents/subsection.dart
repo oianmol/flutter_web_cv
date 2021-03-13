@@ -1,5 +1,6 @@
 import 'package:anmolverma_in/contents/linkpreview/link_preview.dart';
 import 'package:anmolverma_in/contents/linkpreview/url_preview_fetcher.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metadata_fetch/metadata_fetch.dart';
@@ -33,7 +34,7 @@ class SubSection extends StatelessWidget {
                 height: 80,
                 margin: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
                 child: Image(
-                  image: AssetImage(imgAsset),
+                  image: AssetImage(path(imgAsset)),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -42,6 +43,10 @@ class SubSection extends StatelessWidget {
               )
             ],
           );
+  }
+
+  String path(str) {
+    return (kIsWeb) ? 'assets/$str' : str;
   }
 
   Column subsectionColumn() {
