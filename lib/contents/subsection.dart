@@ -34,7 +34,7 @@ class SubSection extends StatelessWidget {
                 height: 80,
                 margin: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
                 child: Image(
-                  image: AssetImage(path(imgAsset)),
+                  image: AssetImage(path(imgAsset),package: 'anmolverma_in'),
                   fit: BoxFit.fill,
                 ),
               ),

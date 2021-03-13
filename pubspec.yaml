@@ -56,10 +56,10 @@ flutter:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
   assets:
-    - assets/mutualmobile.jpeg
-    - assets/svimtech.png
-    - assets/trestor.png
-    - assets/xicom.png
+    - packages/anmolverma_in/assets/mutualmobile.jpeg
+    - packages/anmolverma_in/assets/svimtech.png
+    - packages/anmolverma_in/assets/trestor.png
+    - packages/anmolverma_in/assets/xicom.png
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
 
