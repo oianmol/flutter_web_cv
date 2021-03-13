@@ -11,12 +11,40 @@ class SubSection extends StatelessWidget {
   final String text3;
   final String text4;
   final String linkPreview;
+  final String imgAsset;
 
   SubSection(
-      {this.text1, this.text2, this.text3, this.text4, this.linkPreview});
+      {this.text1,
+      this.text2,
+      this.text3,
+      this.text4,
+      this.linkPreview,
+      this.imgAsset});
 
   @override
   Widget build(BuildContext context) {
+    return imgAsset == null
+        ? subsectionColumn()
+        : Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                width: 80,
+                height: 80,
+                margin: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                child: Image(
+                  image: AssetImage(imgAsset),
+                  fit: BoxFit.fill,
+                ),
+              ),
+              Expanded(
+                child: subsectionColumn(),
+              )
+            ],
+          );
+  }
+
+  Column subsectionColumn() {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
