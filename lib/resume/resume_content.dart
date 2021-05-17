@@ -3,6 +3,7 @@ import 'package:anmolverma_in/contents/user_tabs.dart';
 import 'package:anmolverma_in/resume/resume_extended_content.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ResumeContent extends StatefulWidget {
   @override
@@ -10,6 +11,9 @@ class ResumeContent extends StatefulWidget {
 }
 
 class _ResumeContentState extends State<ResumeContent> {
+  String headlineText =
+      "A result oriented, customer-focused and articulate Engineer. Have worked on multiple projects from concept to completion over the past 7+ years. Skilled in problem solving, cross platform development. Vast experience architecting and building products leveraging the definitive experience and best practices in Android and Flutter development.";
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -26,6 +30,7 @@ class _ResumeContentState extends State<ResumeContent> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               NameView("Anmol Verma"),
+              headline(),
               SizedBox(
                 height: 20,
               ),
@@ -40,4 +45,8 @@ class _ResumeContentState extends State<ResumeContent> {
       },
     );
   }
+
+  Text headline() => Text(headlineText,
+      style: GoogleFonts.lato(
+          color: Colors.white, fontSize: 16, fontWeight: FontWeight.normal));
 }

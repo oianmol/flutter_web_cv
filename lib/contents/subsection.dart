@@ -46,7 +46,7 @@ class SubSection extends StatelessWidget {
   }
 
   String path(str) {
-    return (kIsWeb) ? 'assets/$str' : str;
+    return 'assets/$str';
   }
 
   Column subsectionColumn() {

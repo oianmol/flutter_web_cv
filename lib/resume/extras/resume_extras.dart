@@ -64,13 +64,32 @@ class ResumeExtras extends StatelessWidget {
         separatorWhite(),
         SizedBox(height: 20,),
         SectionHeader(
-          sectionTitle: "TECHNICAL SKILLS",
+          sectionTitle: "VALUABLE SKILLS",
           separator: false,
         ),
         SubSection(
             text1: "♥ SOLID Principles\n"
                 "♥ Design Patterns\n"
                 "♥ Clean Code",
+            text2: "",
+            text3: "",
+            text4: "",
+            linkPreview:null),
+        SizedBox(height: 20,),
+        SectionHeader(
+          sectionTitle: "TECHNICAL SKILLS & LIBRARIES",
+          separator: false,
+        ),
+        SubSection(
+            text1: "♥ Java, Kotlin, Dart\n"
+                "♥ Android Studio,VS code, Xcode\n"
+                "♥ Github , Stash, Bitbucket\n"
+                "♥ Android SDK/NDK, iOS, Flutter, TornadoFX\n"
+                "♥ HTTP/HTTPS REST services , GRPC, Sockets\n"
+                "♥ Retrofit, GSON, Glide, RxJava, Dagger, Data Binding, OkHttp\n"
+                "♥ OpenCV, FFmpeg , Native Camera, TagLib,Exiv2\n"
+                "♥ Google-APIs, Facebook Graph-API, Twitter-APIs\n"
+                "♥ SOLID Principles, MVP/MVVM, Design Patterns, Clean Code\n",
             text2: "",
             text3: "",
             text4: "",

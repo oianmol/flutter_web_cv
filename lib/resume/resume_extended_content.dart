@@ -48,4 +48,5 @@ class ResumeExtendedContent extends StatelessWidget {
       ),
     );
   }
+
 }
