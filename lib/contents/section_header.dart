@@ -6,8 +6,8 @@ class SectionHeader extends StatelessWidget {
   final bool separator;
 
   SectionHeader(
-      {this.sectionTitle,
-      this.separator});
+      {required this.sectionTitle,
+      required this.separator});
 
   @override
   Widget build(BuildContext context) {

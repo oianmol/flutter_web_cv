@@ -62,7 +62,9 @@ class ResumeExtras extends StatelessWidget {
             linkPreview:
                 "https://www.qwiklabs.com/public_profiles/679234c8-a3ce-40fd-b7d7-3bf12de425b5"),
         separatorWhite(),
-        SizedBox(height: 20,),
+        SizedBox(
+          height: 20,
+        ),
         SectionHeader(
           sectionTitle: "VALUABLE SKILLS",
           separator: false,
@@ -70,12 +72,15 @@ class ResumeExtras extends StatelessWidget {
         SubSection(
             text1: "♥ SOLID Principles\n"
                 "♥ Design Patterns\n"
-                "♥ Clean Code",
+                "♥ Clean Code\n"
+                "♥ Kotlin Multiplatform, Jetpack Compose, Flutter",
             text2: "",
             text3: "",
             text4: "",
-            linkPreview:null),
-        SizedBox(height: 20,),
+            linkPreview: null),
+        SizedBox(
+          height: 20,
+        ),
         SectionHeader(
           sectionTitle: "TECHNICAL SKILLS & LIBRARIES",
           separator: false,
@@ -93,8 +98,10 @@ class ResumeExtras extends StatelessWidget {
             text2: "",
             text3: "",
             text4: "",
-            linkPreview:null),
-        SizedBox(height: 20,),
+            linkPreview: null),
+        SizedBox(
+          height: 20,
+        ),
       ],
     );
   }

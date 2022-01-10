@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class TabButton extends StatelessWidget {
-  final Function onPressed;
+  final Function() onPressed;
   final String titleText;
 
-  TabButton({this.onPressed, this.titleText});
+  TabButton({required this.onPressed, required this.titleText});
 
   @override
   Widget build(BuildContext context) {

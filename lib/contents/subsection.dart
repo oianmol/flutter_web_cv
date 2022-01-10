@@ -1,6 +1,5 @@
 import 'package:anmolverma_in/contents/linkpreview/link_preview.dart';
 import 'package:anmolverma_in/contents/linkpreview/url_preview_fetcher.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:metadata_fetch/metadata_fetch.dart';
@@ -11,14 +10,14 @@ class SubSection extends StatelessWidget {
   final String text2;
   final String text3;
   final String text4;
-  final String linkPreview;
-  final String imgAsset;
+  final String? linkPreview;
+  final String? imgAsset;
 
   SubSection(
-      {this.text1,
-      this.text2,
-      this.text3,
-      this.text4,
+      {required this.text1,
+      required this.text2,
+      required this.text3,
+      required this.text4,
       this.linkPreview,
       this.imgAsset});
 
@@ -32,9 +31,9 @@ class SubSection extends StatelessWidget {
               Container(
                 width: 80,
                 height: 80,
-                margin: EdgeInsets.symmetric(vertical: 20,horizontal: 20),
+                margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                 child: Image(
-                  image: AssetImage(path(imgAsset),package: 'anmolverma_in'),
+                  image: AssetImage(path(imgAsset), package: 'anmolverma_in'),
                   fit: BoxFit.fill,
                 ),
               ),
@@ -106,7 +105,7 @@ class SubSection extends StatelessWidget {
   }
 
   Widget linkPreviewWidget() {
-    return linkPreview != null && linkPreview.isNotEmpty
+    return linkPreview != null && linkPreview!.isNotEmpty
         ? linkTouchableWidget()
         : Container();
   }
@@ -115,14 +114,14 @@ class SubSection extends StatelessWidget {
     return GestureDetector(
       child: linkFutureBuilder(),
       onTap: () {
-        launch(linkPreview);
+        launch(linkPreview!);
       },
     );
   }
 
-  FutureBuilder<Metadata> linkFutureBuilder() {
+  FutureBuilder<Metadata?> linkFutureBuilder() {
     return FutureBuilder(
-        future: UrlPreviewFetcher.fetch(linkPreview),
+        future: UrlPreviewFetcher.fetch(linkPreview!),
         builder: (context, snapshot) {
           print(snapshot.error);
           if (snapshot.hasData) {
@@ -140,13 +139,13 @@ class SubSection extends StatelessWidget {
                 decoration: TextDecoration.underline, color: Colors.blue)),
         onTap: () {
           // do what you need to do when "Click here" gets clicked
-          launch(linkPreview);
+          launch(linkPreview!);
         });
   }
 
   LinkPreview linkPreviewWidgetBuilder(AsyncSnapshot snapshot) {
     return LinkPreview(
-        linkPreview: linkPreview,
+        linkPreview: linkPreview ?? "",
         metadata: snapshot.data,
         bodyStyle: TextStyle(
           color: Colors.white70,

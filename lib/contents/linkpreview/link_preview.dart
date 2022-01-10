@@ -9,7 +9,10 @@ class LinkPreview extends StatefulWidget {
   final TextStyle bodyStyle;
 
   LinkPreview(
-      {this.linkPreview, this.metadata, this.bodyStyle, this.titleStyle});
+      {required this.linkPreview,
+      required this.metadata,
+      required this.bodyStyle,
+      required this.titleStyle});
 
   @override
   _FlutterLinkPreviewState createState() => _FlutterLinkPreviewState();
@@ -29,12 +32,12 @@ class _FlutterLinkPreviewState extends State<LinkPreview> {
               width: 30,
               height: 30,
               errorBuilder: (context, error, stackTrace) =>
-                  Icon(Icons.link, size: 30, color: widget.titleStyle?.color),
+                  Icon(Icons.link, size: 30, color: widget.titleStyle.color),
             ),
             const SizedBox(width: 8),
             Expanded(
               child: Text(
-                widget.metadata.title?? "",
+                widget.metadata.title ?? "",
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
                 style: widget.titleStyle,
@@ -43,10 +46,10 @@ class _FlutterLinkPreviewState extends State<LinkPreview> {
           ],
         ),
         if (widget.metadata.description != null &&
-            widget.metadata.description.isNotEmpty) ...[
+            widget.metadata.description!.isNotEmpty) ...[
           const SizedBox(height: 8),
           Text(
-            widget.metadata.description,
+            widget.metadata.description ?? "No Description Available",
             maxLines: 5,
             overflow: TextOverflow.ellipsis,
             style: widget.bodyStyle,

@@ -8,7 +8,7 @@ class ResumeExperience extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeader(sectionTitle: "EXPERIENCE (7+ years)", separator: true),
+        SectionHeader(sectionTitle: "EXPERIENCE (8+ years)", separator: true),
         mutualmobileArch(),
         SizedBox(
           height: 20,

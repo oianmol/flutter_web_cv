@@ -1,4 +1,4 @@
-package in.anmolverma.anmolverma_in
+package `in`.anmolverma.anmolverma_in
 
 import io.flutter.embedding.android.FlutterActivity
 
