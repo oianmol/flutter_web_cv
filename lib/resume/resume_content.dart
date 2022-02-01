@@ -12,7 +12,7 @@ class ResumeContent extends StatefulWidget {
 
 class _ResumeContentState extends State<ResumeContent> {
   String headlineText =
-      "A result oriented, customer-focused and articulate Engineer. Have worked on multiple projects from concept to completion over the past 8+ years. Skilled in problem solving, cross platform development. Vast experience architecting and building products leveraging the definitive experience and best practices in Android and Flutter development.";
+      "A result oriented, customer-focused and articulate Engineer. Have worked on multiple projects from concept to completion over the past 8+ years. Skilled in problem solving, cross platform development. Vast experience architecting and building products leveraging the definitive experience and best practices in Mobile app development development.";
 
   @override
   Widget build(BuildContext context) {
