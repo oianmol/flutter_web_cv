@@ -23,6 +23,11 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+    
+analyzer:
+  strong-mode: true
+  language:
+    enableSuperMixins: true
 
 flutter:
 
@@ -33,3 +38,6 @@ flutter:
     - packages/anmolverma_in/assets/svimtech.png
     - packages/anmolverma_in/assets/trestor.png
     - packages/anmolverma_in/assets/xicom.png
+    
+    
+  
