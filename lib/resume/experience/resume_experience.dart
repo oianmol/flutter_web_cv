@@ -8,7 +8,12 @@ class ResumeExperience extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeader(sectionTitle: "EXPERIENCE (8+ years)", separator: true),
+        SectionHeader(sectionTitle: "EXPERIENCE (9+ years)", separator: true),
+        deliveryHero(),
+        SizedBox(
+          height: 20,
+        ),
+        separatorWhite(),
         mutualmobileArch(),
         SizedBox(
           height: 20,
@@ -53,6 +58,21 @@ class ResumeExperience extends StatelessWidget {
       ],
     );
   }
+  
+  SubSection deliveryHero() {
+    return SubSection(
+          text1: "Android Engineer @DeliveryHeroSE",
+          text2: "~ 5 months",
+          text3: "December 2022 – April 2023 | Berlin, Germany",
+          text4:
+              "♥ Wrote features for the vendor app with JUnit, E2E and UI tests.\n
+♥ Helped migrate features from RxJava to Kotlin Coroutines.\n
+♥ Reduced flakiness in UI Tests by introducing Idling Resources.\n
+♥ Introduced multi-module architecture by extracting build logic using the gradle api.",
+          imgAsset: "deliveryhero.jpeg");
+  }
+
+    
 
   SubSection mutualmobileArch() {
     return SubSection(
