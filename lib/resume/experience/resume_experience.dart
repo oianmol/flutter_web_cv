@@ -65,10 +65,7 @@ class ResumeExperience extends StatelessWidget {
           text2: "~ 5 months",
           text3: "December 2022 – April 2023 | Berlin, Germany",
           text4:
-              "♥ Wrote features for the vendor app with JUnit, E2E and UI tests.\n
-♥ Helped migrate features from RxJava to Kotlin Coroutines.\n
-♥ Reduced flakiness in UI Tests by introducing Idling Resources.\n
-♥ Introduced multi-module architecture by extracting build logic using the gradle api.",
+              "♥ Wrote features for the vendor app with JUnit, E2E and UI tests.\n♥ Helped migrate features from RxJava to Kotlin Coroutines.\n♥ Reduced flakiness in UI Tests by introducing Idling Resources.\n♥ Introduced multi-module architecture by extracting build logic using the gradle api.",
           imgAsset: "deliveryhero.jpeg");
   }
 
