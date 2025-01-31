@@ -8,7 +8,15 @@ class ResumeExperience extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionHeader(sectionTitle: "EXPERIENCE (9+ years)", separator: true),
+        SectionHeader(sectionTitle: "EXPERIENCE (11+ years)", separator: true),
+        atoms(),
+        SizedBox(
+          height: 20,
+        ),
+        tray(),
+        SizedBox(
+          height: 20,
+        ),
         deliveryHero(),
         SizedBox(
           height: 20,
@@ -62,14 +70,42 @@ class ResumeExperience extends StatelessWidget {
   SubSection deliveryHero() {
     return SubSection(
           text1: "Android Engineer @DeliveryHeroSE",
-          text2: "~ 5 months",
-          text3: "December 2022 – April 2023 | Berlin, Germany",
+          text2: "DECEMBER 2022 - APRIL 2023",
+          text3: "Berlin, Germany",
           text4:
               "♥ Wrote features for the vendor app with JUnit, E2E and UI tests.\n♥ Helped migrate features from RxJava to Kotlin Coroutines.\n♥ Reduced flakiness in UI Tests by introducing Idling Resources.\n♥ Introduced multi-module architecture by extracting build logic using the gradle api.",
           imgAsset: "deliveryhero.jpeg");
   }
 
-    
+
+  SubSection tray() {
+    return SubSection(
+          text1: "Principal Engineer @Tray",
+          text2: "JUNE 2023 - JULY 2024",
+          text3: "REMOTE",
+          text4:
+              """
+      Refactored and rewrote existing apps from Java to Kotlin, improved code correctness and maintainability.
+Introduced a culture of writing unit tests and instrumentation tests, increasing test coverage by 40% and reduced bugs in the process.
+Trained and guided the team in writing code with SOLID principles, improving code quality and team efficiency.
+Actively reviewed PRs, ensuring code quality and reducing code review time.
+Developed a Custom Device Farm for Android Tests with test sharding support, reducing testing costs by 50% and improving test efficiency.
+      """,
+          imgAsset: "tray.png");
+  }
+
+  SubSection atoms() {
+    return SubSection(
+          text1: "Lead Mobile Engineer @Atoms.",
+          text2: "Present",
+          text3: "REMOTE",
+          text4:
+              """
+      Built  the Mobile app from scratch for the award winning book Atomic Habits, The mobile app was  written with Jetpack Compose + Kotlin + Coroutines. Good test coverage for  unit tests, also UI tests  making sure that the UI state is updated correctly.
+The app is built with multiple feature modules and has a Public API approach where the domain/feature  layer is separate allowing features  to become stable and has nothing to worry about how data sources change affects the feature and UI modeling.
+      """,
+          imgAsset: "atoms.png");
+  }
 
   SubSection mutualmobileArch() {
     return SubSection(
